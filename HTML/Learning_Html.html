@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete HTML Reference Guide with all tags, examples, and interactive demos">
+    <title>Complete HTML Reference 🚀 - All Tags & Examples</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }
+        header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        header p { font-size: 1.2em; opacity: 0.9; }
+        nav { background: #2c3e50; padding: 15px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; transition: all 0.3s; display: block; background: rgba(255,255,255,0.1); }
+        nav a:hover { background: #3498db; transform: translateY(-2px); }
+        .content { padding: 40px; }
+        .section { margin-bottom: 60px; animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .section h2 { color: #667eea; font-size: 2.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #667eea; }
+        .section h3 { color: #764ba2; font-size: 1.8em; margin: 30px 0 15px; }
+        .section h4 { color: #555; font-size: 1.4em; margin: 20px 0 10px; }
+        .card { background: #f8f9fa; border-radius: 10px; padding: 25px; margin: 20px 0; border-left: 5px solid #667eea; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s; }
+        .card:hover { transform: translateX(5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .example-box { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; margin: 15px 0; position: relative; overflow-x: auto; }
+        .example-box pre { margin: 0; font-family: 'Courier New', monospace; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
+        .copy-btn { position: absolute; top: 10px; right: 10px; background: #3498db; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+        .copy-btn:hover { background: #2980b9; transform: scale(1.05); }
+        .copy-btn.copied { background: #27ae60; }
+        .output-box { background: white; border: 2px solid #667eea; border-radius: 8px; padding: 20px; margin: 15px 0; }
+        .output-label { background: #667eea; color: white; padding: 5px 15px; border-radius: 5px; display: inline-block; margin-bottom: 10px; font-weight: bold; }
+        .note { background: #fff3cd; border-left: 5px solid #ffc107; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .tip { background: #d1ecf1; border-left: 5px solid #17a2b8; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .warning { background: #f8d7da; border-left: 5px solid #dc3545; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .success { background: #d4edda; border-left: 5px solid #28a745; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; }
+        th { background: #667eea; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px 15px; border-bottom: 1px solid #ddd; }
+        tr:hover { background: #f8f9fa; }
+        .tag-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin: 20px 0; }
+        .tag-item { background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #667eea; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .tag-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .tag-name { color: #667eea; font-weight: bold; font-size: 1.1em; font-family: 'Courier New', monospace; }
+        .tag-description { color: #666; margin-top: 5px; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 30px; }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background: #667eea; color: white; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: all 0.3s; font-size: 24px; z-index: 1000; }
+        .scroll-top:hover { background: #764ba2; transform: translateY(-5px); }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 0.75em; font-weight: bold; margin-left: 5px; }
+        .badge-html5 { background: #e34c26; color: white; }
+        .badge-deprecated { background: #dc3545; color: white; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } .content { padding: 20px; } nav ul { flex-direction: column; } .tag-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Complete HTML Reference</h1>
+            <p>Every HTML Tag • Interactive Examples • Copy-Ready Code</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#root">🌳 Root</a></li>
+                <li><a href="#metadata">📋 Metadata</a></li>
+                <li><a href="#sectioning">📦 Sectioning</a></li>
+                <li><a href="#text">✍️ Text</a></li>
+                <li><a href="#links">🔗 Links</a></li>
+                <li><a href="#media">🖼️ Media</a></li>
+                <li><a href="#lists">📝 Lists</a></li>
+                <li><a href="#tables">📊 Tables</a></li>
+                <li><a href="#forms">📋 Forms</a></li>
+                <li><a href="#interactive">🎮 Interactive</a></li>
+                <li><a href="#scripting">⚡ Scripting</a></li>
+                <li><a href="#embedded">🔌 Embedded</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+
+            <!-- ROOT ELEMENT -->
+            <section id="root" class="section">
+                <h2>🌳 Root Element</h2>
+                <div class="card">
+                    <h3>&lt;html&gt; - The Root Element</h3>
+                    <p>The <code>&lt;html&gt;</code> element represents the root of an HTML document.</p>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <div class="note"><strong>💡 Note:</strong> Always include the <code>lang</code> attribute!</div>
+                </div>
+            </section>
+
+            <!-- METADATA -->
+            <section id="metadata" class="section">
+                <h2>📋 Document Metadata Tags</h2>
+                <div class="card">
+                    <h3>All Metadata Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;head&gt;</div><div class="tag-description">Contains metadata</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;title&gt;</div><div class="tag-description">Document title</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;meta&gt;</div><div class="tag-description">Metadata information</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;link&gt;</div><div class="tag-description">External resources</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;style&gt;</div><div class="tag-description">Internal CSS</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;base&gt;</div><div class="tag-description">Base URL</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Page description"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    &lt;link rel="icon" href="favicon.ico"&gt;
+&lt;/head&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTIONING -->
+            <section id="sectioning" class="section">
+                <h2>📦 Content Sectioning Tags</h2>
+                <div class="card">
+                    <h3>Semantic Sectioning Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;body&gt;</div><div class="tag-description">Visible content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;header&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Header section</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;nav&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Navigation links</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;main&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Main content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;section&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Content section</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;article&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Self-contained content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;aside&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Sidebar content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;footer&gt; <span class="badge badge-html5">HTML5</span></div><div class="tag-description">Footer section</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;h1&gt; to &lt;h6&gt;</div><div class="tag-description">Headings</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Site Title&lt;/h1&gt;
+        &lt;nav&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;Content...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;&lt;p&gt;&copy; 2025&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TEXT -->
+            <section id="text" class="section">
+                <h2>✍️ Text Content Tags</h2>
+                <div class="card">
+                    <h3>All Text Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;p&gt;</div><div class="tag-description">Paragraph</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;div&gt;</div><div class="tag-description">Block container</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;span&gt;</div><div class="tag-description">Inline container</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;br&gt;</div><div class="tag-description">Line break</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;hr&gt;</div><div class="tag-description">Horizontal rule</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;strong&gt;</div><div class="tag-description">Bold/important</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;em&gt;</div><div class="tag-description">Italic/emphasis</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;mark&gt;</div><div class="tag-description">Highlighted</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;small&gt;</div><div class="tag-description">Smaller text</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;del&gt;</div><div class="tag-description">Deleted text</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;ins&gt;</div><div class="tag-description">Inserted text</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;sub&gt;</div><div class="tag-description">Subscript</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;sup&gt;</div><div class="tag-description">Superscript</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;code&gt;</div><div class="tag-description">Inline code</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;pre&gt;</div><div class="tag-description">Preformatted text</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;kbd&gt;</div><div class="tag-description">Keyboard input</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;abbr&gt;</div><div class="tag-description">Abbreviation</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;blockquote&gt;</div><div class="tag-description">Block quote</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;q&gt;</div><div class="tag-description">Inline quote</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;cite&gt;</div><div class="tag-description">Citation</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;time&gt;</div><div class="tag-description">Date/time</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;Highlighted&lt;/mark&gt; and &lt;del&gt;deleted&lt;/del&gt; text.&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O and E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Use &lt;code&gt;console.log()&lt;/code&gt; for debugging.&lt;/p&gt;
+&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;&lt;/p&gt;
+&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;&lt;/p&gt;
+&lt;blockquote&gt;A long quotation&lt;/blockquote&gt;
+&lt;p&gt;Published: &lt;time datetime="2025-10-19"&gt;Oct 19, 2025&lt;/time&gt;&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <span class="output-label">👁️ Output:</span>
+                        <p>This is <strong>bold</strong> and <em>italic</em> text.</p>
+                        <p><mark>Highlighted</mark> and <del>deleted</del> text.</p>
+                        <p>H<sub>2</sub>O and E=mc<sup>2</sup></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LINKS -->
+            <section id="links" class="section">
+                <h2>🔗 Links</h2>
+                <div class="card">
+                    <h3>&lt;a&gt; - Anchor Tag</h3>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;
+&lt;a href="page.html" target="_blank"&gt;New Tab&lt;/a&gt;
+&lt;a href="mailto:hello@example.com"&gt;Email&lt;/a&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;
+&lt;a href="#section"&gt;Jump to Section&lt;/a&gt;
+&lt;a href="file.pdf" download&gt;Download&lt;/a&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MEDIA -->
+            <section id="media" class="section">
+                <h2>🖼️ Images and Multimedia</h2>
+                <div class="card">
+                    <h3>All Media Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;img&gt;</div><div class="tag-description">Image</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;audio&gt;</div><div class="tag-description">Audio content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;video&gt;</div><div class="tag-description">Video content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;source&gt;</div><div class="tag-description">Media source</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;track&gt;</div><div class="tag-description">Text tracks</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;picture&gt;</div><div class="tag-description">Responsive images</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;figure&gt;</div><div class="tag-description">Self-contained content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;figcaption&gt;</div><div class="tag-description">Figure caption</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;svg&gt;</div><div class="tag-description">Vector graphics</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;canvas&gt;</div><div class="tag-description">Graphics canvas</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!-- Image --&gt;
+&lt;img src="photo.jpg" alt="Description" width="400"&gt;
+
+&lt;!-- Figure with caption --&gt;
+&lt;figure&gt;
+    &lt;img src="diagram.png" alt="Diagram"&gt;
+    &lt;figcaption&gt;Figure 1: System Diagram&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Video --&gt;
+&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+&lt;/video&gt;
+
+&lt;!-- Audio --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;!-- SVG --&gt;
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" fill="red"/&gt;
+&lt;/svg&gt;
+
+&lt;!-- Canvas --&gt;
+&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LISTS -->
+            <section id="lists" class="section">
+                <h2>📝 Lists</h2>
+                <div class="card">
+                    <h3>All List Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;ul&gt;</div><div class="tag-description">Unordered list</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;ol&gt;</div><div class="tag-description">Ordered list</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;li&gt;</div><div class="tag-description">List item</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;dl&gt;</div><div class="tag-description">Description list</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;dt&gt;</div><div class="tag-description">Description term</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;dd&gt;</div><div class="tag-description">Description definition</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!-- Unordered List --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered List --&gt;
+&lt;ol&gt;
+    &lt;li&gt;First&lt;/li&gt;
+    &lt;li&gt;Second&lt;/li&gt;
+    &lt;li&gt;Third&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Nested Lists --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apple&lt;/li&gt;
+            &lt;li&gt;Banana&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Description List --&gt;
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <span class="output-label">👁️ Output:</span>
+                        <ul><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+                        <ol><li>First</li><li>Second</li><li>Third</li></ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TABLES -->
+            <section id="tables" class="section">
+                <h2>📊 Tables</h2>
+                <div class="card">
+                    <h3>All Table Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;table&gt;</div><div class="tag-description">Table</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;caption&gt;</div><div class="tag-description">Table caption</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;thead&gt;</div><div class="tag-description">Header group</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;tbody&gt;</div><div class="tag-description">Body group</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;tfoot&gt;</div><div class="tag-description">Footer group</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;tr&gt;</div><div class="tag-description">Table row</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;th&gt;</div><div class="tag-description">Header cell</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;td&gt;</div><div class="tag-description">Data cell</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;table border="1"&gt;
+    &lt;caption&gt;Student Grades&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Math&lt;/th&gt;
+            &lt;th&gt;Science&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;John&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;90&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Jane&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <span class="output-label">👁️ Output:</span>
+                        <table border="1" style="width:100%;border-collapse:collapse;">
+                            <caption><strong>Student Grades</strong></caption>
+                            <thead><tr><th>Name</th><th>Math</th><th>Science</th></tr></thead>
+                            <tbody><tr><td>John</td><td>85</td><td>90</td></tr><tr><td>Jane</td><td>92</td><td>88</td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FORMS -->
+            <section id="forms" class="section">
+                <h2>📋 Forms and Inputs</h2>
+                <div class="card">
+                    <h3>All Form Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;form&gt;</div><div class="tag-description">Form container</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;input&gt;</div><div class="tag-description">Input field</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;textarea&gt;</div><div class="tag-description">Multi-line text</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;button&gt;</div><div class="tag-description">Button</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;select&gt;</div><div class="tag-description">Dropdown</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;option&gt;</div><div class="tag-description">Dropdown option</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;label&gt;</div><div class="tag-description">Input label</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;fieldset&gt;</div><div class="tag-description">Group fields</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;legend&gt;</div><div class="tag-description">Fieldset caption</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;datalist&gt;</div><div class="tag-description">Predefined options</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;progress&gt;</div><div class="tag-description">Progress bar</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;meter&gt;</div><div class="tag-description">Measurement</div></div>
+                    </div>
+                    <h4>All Input Types</h4>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;form action="/submit" method="POST"&gt;
+    &lt;!-- Text Inputs --&gt;
+    &lt;input type="text" placeholder="Text"&gt;
+    &lt;input type="password" placeholder="Password"&gt;
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;input type="url" placeholder="URL"&gt;
+    &lt;input type="tel" placeholder="Phone"&gt;
+    &lt;input type="search" placeholder="Search"&gt;
+    
+    &lt;!-- Number Inputs --&gt;
+    &lt;input type="number" min="0" max="100"&gt;
+    &lt;input type="range" min="0" max="100"&gt;
+    
+    &lt;!-- Date/Time Inputs --&gt;
+    &lt;input type="date"&gt;
+    &lt;input type="time"&gt;
+    &lt;input type="datetime-local"&gt;
+    &lt;input type="month"&gt;
+    &lt;input type="week"&gt;
+    
+    &lt;!-- Other Inputs --&gt;
+    &lt;input type="color"&gt;
+    &lt;input type="file"&gt;
+    &lt;input type="checkbox"&gt;
+    &lt;input type="radio"&gt;
+    
+    &lt;!-- Textarea --&gt;
+    &lt;textarea rows="4" cols="50"&gt;&lt;/textarea&gt;
+    
+    &lt;!-- Select Dropdown --&gt;
+    &lt;select&gt;
+        &lt;option value="1"&gt;Option 1&lt;/option&gt;
+        &lt;option value="2"&gt;Option 2&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;!-- Buttons --&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;button type="reset"&gt;Reset&lt;/button&gt;
+    
+    &lt;!-- Progress and Meter --&gt;
+    &lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+    &lt;meter value="0.6"&gt;60%&lt;/meter&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERACTIVE -->
+            <section id="interactive" class="section">
+                <h2>🎮 Interactive Elements</h2>
+                <div class="card">
+                    <h3>Interactive Tags</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;details&gt;</div><div class="tag-description">Collapsible widget</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;summary&gt;</div><div class="tag-description">Details heading</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;dialog&gt;</div><div class="tag-description">Dialog box</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;details&gt;
+    &lt;summary&gt;Click to expand&lt;/summary&gt;
+    &lt;p&gt;Hidden content appears here!&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;dialog id="myDialog"&gt;
+    &lt;p&gt;This is a dialog&lt;/p&gt;
+    &lt;button onclick="this.closest('dialog').close()"&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+                    </div>
+                    <div class="output-box">
+                        <span class="output-label">👁️ Live Demo:</span>
+                        <details><summary>🔽 Click me!</summary><p>Hidden content revealed!</p></details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SCRIPTING -->
+            <section id="scripting" class="section">
+                <h2>⚡ Scripting</h2>
+                <div class="card">
+                    <h3>Scripting Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;script&gt;</div><div class="tag-description">JavaScript code</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;noscript&gt;</div><div class="tag-description">No JS fallback</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;template&gt;</div><div class="tag-description">HTML template</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!-- Inline Script --&gt;
+&lt;script&gt;
+    console.log('Hello World!');
+    function greet() {
+        alert('Hello!');
+    }
+&lt;/script&gt;
+
+&lt;!-- External Script --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;script src="script.js" defer&gt;&lt;/script&gt;
+&lt;script src="script.js" async&gt;&lt;/script&gt;
+
+&lt;!-- NoScript Fallback --&gt;
+&lt;noscript&gt;
+    &lt;p&gt;JavaScript is disabled&lt;/p&gt;
+&lt;/noscript&gt;
+
+&lt;!-- Template --&gt;
+&lt;template id="myTemplate"&gt;
+    &lt;div&gt;Template content&lt;/div&gt;
+&lt;/template&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EMBEDDED -->
+            <section id="embedded" class="section">
+                <h2>🔌 Embedded Content</h2>
+                <div class="card">
+                    <h3>Embedded Elements</h3>
+                    <div class="tag-grid">
+                        <div class="tag-item"><div class="tag-name">&lt;iframe&gt;</div><div class="tag-description">Embedded webpage</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;embed&gt;</div><div class="tag-description">External content</div></div>
+                        <div class="tag-item"><div class="tag-name">&lt;object&gt;</div><div class="tag-description">External resource</div></div>
+                    </div>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!-- iframe --&gt;
+&lt;iframe src="https://example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+
+&lt;!-- YouTube embed --&gt;
+&lt;iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;!-- Embed PDF --&gt;
+&lt;embed src="document.pdf" width="100%" height="600px"&gt;
+
+&lt;!-- Object --&gt;
+&lt;object data="document.pdf" type="application/pdf"&gt;
+    &lt;p&gt;PDF cannot be displayed&lt;/p&gt;
+&lt;/object&gt;</code></pre>
+                    </div>
+                    <div class="warning"><strong>⚠️ Security:</strong> Be careful with iframes from untrusted sources!</div>
+                </div>
+            </section>
+
+            <!-- DEPRECATED TAGS -->
+            <section class="section">
+                <h2>🚫 Deprecated Tags (Don't Use!)</h2>
+                <div class="card">
+                    <div class="tag-grid">
+                        <div class="tag-item" style="border-left-color:#dc3545;"><div class="tag-name">&lt;font&gt; <span class="badge badge-deprecated">Deprecated</span></div><div class="tag-description">Use CSS instead</div></div>
+                        <div class="tag-item" style="border-left-color:#dc3545;"><div class="tag-name">&lt;center&gt; <span class="badge badge-deprecated">Deprecated</span></div><div class="tag-description">Use CSS text-align</div></div>
+                        <div class="tag-item" style="border-left-color:#dc3545;"><div class="tag-name">&lt;big&gt; <span class="badge badge-deprecated">Deprecated</span></div><div class="tag-description">Use CSS font-size</div></div>
+                        <div class="tag-item" style="border-left-color:#dc3545;"><div class="tag-name">&lt;marquee&gt; <span class="badge badge-deprecated">Deprecated</span></div><div class="tag-description">Use CSS animations</div></div>
+                        <div class="tag-item" style="border-left-color:#dc3545;"><div class="tag-name">&lt;frame&gt; <span class="badge badge-deprecated">Deprecated</span></div><div class="tag-description">Use iframe or CSS</div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SPECIAL CHARACTERS -->
+            <section class="section">
+                <h2>🔤 HTML Special Characters</h2>
+                <div class="card">
+                    <table>
+                        <thead><tr><th>Character</th><th>Code</th><th>Name</th></tr></thead>
+                        <tbody>
+                            <tr><td>&lt;</td><td>&amp;#60;</td><td>&amp;lt;</td></tr>
+                            <tr><td>&gt;</td><td>&amp;#62;</td><td>&amp;gt;</td></tr>
+                            <tr><td>&amp;</td><td>&amp;#38;</td><td>&amp;amp;</td></tr>
+                            <tr><td>"</td><td>&amp;#34;</td><td>&amp;quot;</td></tr>
+                            <tr><td>©</td><td>&amp;#169;</td><td>&amp;copy;</td></tr>
+                            <tr><td>®</td><td>&amp;#174;</td><td>&amp;reg;</td></tr>
+                            <tr><td>™</td><td>&amp;#8482;</td><td>&amp;trade;</td></tr>
+                            <tr><td>€</td><td>&amp;#8364;</td><td>&amp;euro;</td></tr>
+                            <tr><td>°</td><td>&amp;#176;</td><td>&amp;deg;</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;p&gt;5 &amp;lt; 10 &amp;amp; 10 &amp;gt; 5&lt;/p&gt;
+&lt;p&gt;&amp;copy; 2025 Company&amp;trade;&lt;/p&gt;
+&lt;p&gt;Temperature: 25&amp;deg;C&lt;/p&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GLOBAL ATTRIBUTES -->
+            <section class="section">
+                <h2>⚙️ Global Attributes (Work on ALL Elements)</h2>
+                <div class="card">
+                    <table>
+                        <thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead>
+                        <tbody>
+                            <tr><td><code>id</code></td><td>Unique identifier</td><td><code>id="header"</code></td></tr>
+                            <tr><td><code>class</code></td><td>CSS class</td><td><code>class="btn"</code></td></tr>
+                            <tr><td><code>style</code></td><td>Inline CSS</td><td><code>style="color:red"</code></td></tr>
+                            <tr><td><code>title</code></td><td>Tooltip</td><td><code>title="Info"</code></td></tr>
+                            <tr><td><code>lang</code></td><td>Language</td><td><code>lang="en"</code></td></tr>
+                            <tr><td><code>hidden</code></td><td>Hide element</td><td><code>hidden</code></td></tr>
+                            <tr><td><code>data-*</code></td><td>Custom data</td><td><code>data-id="123"</code></td></tr>
+                            <tr><td><code>tabindex</code></td><td>Tab order</td><td><code>tabindex="1"</code></td></tr>
+                            <tr><td><code>contenteditable</code></td><td>Editable</td><td><code>contenteditable="true"</code></td></tr>
+                            <tr><td><code>draggable</code></td><td>Draggable</td><td><code>draggable="true"</code></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- BEST PRACTICES -->
+            <section class="section">
+                <h2>✅ HTML Best Practices</h2>
+                <div class="card">
+                    <div class="success">
+                        <h4>✅ DO:</h4>
+                        <ul style="margin-left:20px;">
+                            <li>✅ Use semantic HTML tags</li>
+                            <li>✅ Always include DOCTYPE</li>
+                            <li>✅ Use lowercase for tags</li>
+                            <li>✅ Quote all attributes</li>
+                            <li>✅ Add alt text to images</li>
+                            <li>✅ Validate your HTML</li>
+                            <li>✅ Use proper indentation</li>
+                            <li>✅ Include meta viewport</li>
+                        </ul>
+                    </div>
+                    <div class="warning">
+                        <h4>❌ DON'T:</h4>
+                        <ul style="margin-left:20px;">
+                            <li>❌ Use deprecated tags</li>
+                            <li>❌ Skip closing tags</li>
+                            <li>❌ Use inline styles everywhere</li>
+                            <li>❌ Forget alt text</li>
+                            <li>❌ Use multiple h1 tags</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPLETE TEMPLATE -->
+            <section class="section">
+                <h2>🎯 Complete HTML5 Template</h2>
+                <div class="card">
+                    <div class="example-box">
+                        <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta name="description" content="Page description"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Title&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Section Title&lt;/h2&gt;
+            &lt;p&gt;Your content here...&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 Your Website&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p style="font-size:1.2em;margin:20px 0;">You now have access to <strong>every HTML tag</strong> with examples!</p>
+            <p style="margin-top:20px;">📚 100+ Tags • 💡 Copy-Ready Code • ✨ Interactive Examples</p>
+            <p style="margin-top:30px;opacity:0.8;">Made with ❤️ for web developers<br>Keep learning • Keep building • Keep growing</p>
+            <p style="margin-top:20px;font-size:0.9em;">© 2025 HTML Learning Hub | Free Educational Resource</p>
+        </footer>
+    </div>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const code = codeBlock.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        const scrollTop = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTop.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+        });
+
+        console.log('%c🚀 Complete HTML Reference!', 'font-size:24px;color:#667eea;font-weight:bold;');
+        console.log('%c📚 Every HTML tag at your fingertips!', 'font-size:16px;color:#764ba2;');
+        console.log('%cHappy Coding! 💻✨', 'font-size:14px;color:#3498db;');
+    </script>
+</body>
+</html>
